@@ -18,18 +18,12 @@ services:
 
   app:
     build: .
-    container_name: backend-despacho
+    container_name: backend-ventas
     depends_on:
       db:
         condition: service_healthy
     ports:
       - "8080:8080"
-    environment:
-      DB_ENDPOINT: db
-      DB_PORT: 3306
-      DB_NAME: ventas_db
-      DB_USERNAME: ventas_user
-      DB_PASSWORD: ventas_pass
     restart: unless-stopped
 
 volumes:
